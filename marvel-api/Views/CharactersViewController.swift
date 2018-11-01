@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CharactersViewController: UIViewController {
 
+    @IBOutlet weak var characterNameLabel: UILabel!
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterDescLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
