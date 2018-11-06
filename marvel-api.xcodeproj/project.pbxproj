@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		40921F214C4477F14E975595 /* Pods_marvel_apiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB17C671E6ACCA1F7282FCF0 /* Pods_marvel_apiTests.framework */; };
 		6DB1F6A5155DEF5C06C17BB0 /* Pods_marvel_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E536CC1BE224688FDE4F2A6A /* Pods_marvel_api.framework */; };
+		A56F55042190C30400B740DC /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F55032190C30400B740DC /* CharacterViewController.swift */; };
 		A59E080F218B2E3200CF1608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E080E218B2E3200CF1608 /* AppDelegate.swift */; };
-		A59E0811218B2E3200CF1608 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0810218B2E3200CF1608 /* CharactersViewController.swift */; };
+		A59E0811218B2E3200CF1608 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0810218B2E3200CF1608 /* InfoViewController.swift */; };
 		A59E0814218B2E3200CF1608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59E0812218B2E3200CF1608 /* Main.storyboard */; };
 		A59E0816218B2E3300CF1608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59E0815218B2E3300CF1608 /* Assets.xcassets */; };
 		A59E0819218B2E3300CF1608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59E0817218B2E3300CF1608 /* LaunchScreen.storyboard */; };
 		A59E0824218B2E3300CF1608 /* marvel_apiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0823218B2E3300CF1608 /* marvel_apiTests.swift */; };
+		A5F3C34C2190A4C5002944EA /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3C34B2190A4C5002944EA /* CharacterCell.swift */; };
+		A5F3C3512190ABCA002944EA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3C3502190ABCA002944EA /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +35,10 @@
 		638458D3BDE4D264BD483A2C /* Pods-marvel-apiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-apiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-apiTests/Pods-marvel-apiTests.release.xcconfig"; sourceTree = "<group>"; };
 		668BBBFF145CF77017B30F8D /* Pods-marvel-api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-api.release.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-api/Pods-marvel-api.release.xcconfig"; sourceTree = "<group>"; };
 		A5568E22BF2EB3639326E07D /* Pods-marvel-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-api.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-api/Pods-marvel-api.debug.xcconfig"; sourceTree = "<group>"; };
+		A56F55032190C30400B740DC /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		A59E080B218B2E3200CF1608 /* marvel-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "marvel-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59E080E218B2E3200CF1608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A59E0810218B2E3200CF1608 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		A59E0810218B2E3200CF1608 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		A59E0813218B2E3200CF1608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A59E0815218B2E3300CF1608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A59E0818218B2E3300CF1608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		A59E081F218B2E3300CF1608 /* marvel-apiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-apiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59E0823218B2E3300CF1608 /* marvel_apiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvel_apiTests.swift; sourceTree = "<group>"; };
 		A59E0825218B2E3300CF1608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F3C34B2190A4C5002944EA /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		A5F3C3502190ABCA002944EA /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DB17C671E6ACCA1F7282FCF0 /* Pods_marvel_apiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_apiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E536CC1BE224688FDE4F2A6A /* Pods_marvel_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,10 +100,7 @@
 				A59E0812218B2E3200CF1608 /* Main.storyboard */,
 				A59E0817218B2E3300CF1608 /* LaunchScreen.storyboard */,
 				A59E081A218B2E3300CF1608 /* Info.plist */,
-				A59E082E218B328A00CF1608 /* Common */,
-				A59E082F218B32AA00CF1608 /* Helpers */,
-				A59E0831218B32BA00CF1608 /* Models */,
-				A59E0830218B32B300CF1608 /* Network */,
+				A5F3C34F2190ABBA002944EA /* Models */,
 				A59E0832218B32BE00CF1608 /* Views */,
 			);
 			path = "marvel-api";
@@ -112,40 +115,22 @@
 			path = "marvel-apiTests";
 			sourceTree = "<group>";
 		};
-		A59E082E218B328A00CF1608 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		A59E082F218B32AA00CF1608 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		A59E0830218B32B300CF1608 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		A59E0831218B32BA00CF1608 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		A59E0832218B32BE00CF1608 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A59E0810218B2E3200CF1608 /* CharactersViewController.swift */,
+				A5F3C34B2190A4C5002944EA /* CharacterCell.swift */,
+				A59E0810218B2E3200CF1608 /* InfoViewController.swift */,
+				A56F55032190C30400B740DC /* CharacterViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5F3C34F2190ABBA002944EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5F3C3502190ABCA002944EA /* Character.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DC4B10D82D03994E648C3244 /* Frameworks */ = {
@@ -322,6 +307,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-marvel-api/Pods-marvel-api-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
@@ -330,6 +316,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
@@ -345,8 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59E0811218B2E3200CF1608 /* CharactersViewController.swift in Sources */,
+				A5F3C34C2190A4C5002944EA /* CharacterCell.swift in Sources */,
+				A56F55042190C30400B740DC /* CharacterViewController.swift in Sources */,
+				A59E0811218B2E3200CF1608 /* InfoViewController.swift in Sources */,
 				A59E080F218B2E3200CF1608 /* AppDelegate.swift in Sources */,
+				A5F3C3512190ABCA002944EA /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
