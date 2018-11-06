@@ -22,15 +22,7 @@ class InfoViewController: UIViewController {
         
         guard let character = character else {
             fatalError("Please pass in a valid Character Object")
-            
         }
-        layoutCharacter(character: character)
-    }
-}
-
-extension InfoViewController {
-    private func layoutCharacter(character: Character){
-        
     }
 }
 

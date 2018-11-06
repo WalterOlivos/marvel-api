@@ -12,13 +12,13 @@ import Kingfisher
 class CharacterCell: UITableViewCell {
     public static let reuseIdentifier = "CharacterCell"
 
-    @IBOutlet weak var imgThumb: UIImageView!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var imageThumbnail: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
     
-    public func configureWith(_ character: Character) {
-        lblName.text = character.name
+    public func configure(with character: Character) {
+        labelName.text = character.name
         
-        imgThumb.kf.setImage(with: character.thumbnail.url,
+        imageThumbnail.kf.setImage(with: character.thumbnail.url,
                              options: [.transition(.fade(0.3))])
     }
 }

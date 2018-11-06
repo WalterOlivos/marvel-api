@@ -17,16 +17,16 @@ class CharacterViewController: UIViewController {
             switch state {
             case .ready:
                 viewMessage.isHidden = true
-                tblCharacters.isHidden = false
-                tblCharacters.reloadData()
+                tableCharacters.isHidden = false
+                tableCharacters.reloadData()
             case .loading:
-                tblCharacters.isHidden = true
+                tableCharacters.isHidden = true
                 viewMessage.isHidden = false
-                lblMessage.text = "Getting characters..."
+                labelMessage.text = "Getting characters..."
             case .error:
-                tblCharacters.isHidden = true
+                tableCharacters.isHidden = true
                 viewMessage.isHidden = false
-                lblMessage.text =   """
+                labelMessage.text =   """
                                     Something went wrong!
                                     Try again later.
                                     """
@@ -35,9 +35,9 @@ class CharacterViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var tblCharacters: UITableView!
+    @IBOutlet weak var tableCharacters: UITableView!
     @IBOutlet weak var viewMessage: UIView!
-    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var labelMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,7 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard case .ready(let items) = state else { return cell }
         
-        cell.configureWith(items[indexPath.item])
+        cell.configure(with: items[indexPath.row])
         
         return cell
     }
@@ -78,9 +78,10 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+       
         guard case .ready(let items) = state else { return }
         
-        let characterVC = InfoViewController.instantiate(character: items[indexPath.item])
+        let characterVC = InfoViewController.instantiate(character: items[indexPath.row])
         navigationController?.pushViewController(characterVC, animated: true)
     }
 }
