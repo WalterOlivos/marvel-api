@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class CharacterCell: UITableViewCell {
-    public static let reuseIdentifier = "CharacterCell"
+    static let reuseIdentifier = "CharacterCell"
 
     @IBOutlet weak var imageThumbnail: UIImageView!
     @IBOutlet weak var labelName: UILabel!

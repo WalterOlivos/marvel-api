@@ -52,8 +52,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imgThumb" destination="NdW-lm-oXX" id="mIQ-bG-YZE"/>
-                                            <outlet property="lblName" destination="b00-Su-3Kb" id="dfn-Yn-wgh"/>
+                                            <outlet property="imageThumbnail" destination="NdW-lm-oXX" id="yQq-aC-r6u"/>
+                                            <outlet property="labelName" destination="b00-Su-3Kb" id="X4h-Fk-HIw"/>
                                             <segue destination="BYZ-38-t0r" kind="show" id="3l4-rD-Qz2"/>
                                         </connections>
                                     </tableViewCell>
@@ -93,9 +93,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Characters" id="BRn-09-43H"/>
                     <connections>
-                        <outlet property="lblMessage" destination="LUc-NS-9xd" id="79S-ET-9le"/>
-                        <outlet property="tblCharacters" destination="Tjw-gc-oGY" id="7jN-CH-MiL"/>
-                        <outlet property="tlbCharacters" destination="Tjw-gc-oGY" id="S4h-8R-Msw"/>
+                        <outlet property="labelStatusMessage" destination="LUc-NS-9xd" id="biX-Y0-YXQ"/>
+                        <outlet property="tableCharacters" destination="Tjw-gc-oGY" id="cwM-Tz-xcp"/>
                         <outlet property="viewMessage" destination="qf7-ge-ODC" id="D0P-4E-dka"/>
                     </connections>
                 </viewController>
@@ -159,7 +158,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="characterDescLabel" destination="zv3-ns-gG0" id="FOM-NE-ysj"/>
                         <outlet property="characterDescriptionLabel" destination="zv3-ns-gG0" id="L4n-rI-b17"/>
                         <outlet property="characterImageView" destination="BXj-Zb-gex" id="6PX-Wf-1MG"/>
                         <outlet property="characterNameLabel" destination="1y0-FE-3AL" id="CpL-ON-OjT"/>

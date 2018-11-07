@@ -14,35 +14,36 @@ class CharacterViewController: UIViewController {
     
     private var state: State = .loading {
         didSet {
-            switch state {
-            case .ready:
-                viewMessage.isHidden = true
-                tableCharacters.isHidden = false
-                tableCharacters.reloadData()
-            case .loading:
-                tableCharacters.isHidden = true
-                viewMessage.isHidden = false
-                labelMessage.text = "Getting characters..."
-            case .error:
-                tableCharacters.isHidden = true
-                viewMessage.isHidden = false
-                labelMessage.text =   """
-                                    Something went wrong!
-                                    Try again later.
-                                    """
-            }
+            stateSwitch()
         }
     }
     
-    
+    private func stateSwitch() {
+        switch state {
+        case .ready:
+            viewMessage.isHidden = true
+            tableCharacters.isHidden = false
+            tableCharacters.reloadData()
+        case .loading:
+            tableCharacters.isHidden = true
+            viewMessage.isHidden = false
+            labelStatusMessage.text = "Getting characters..."
+        case .error:
+            tableCharacters.isHidden = true
+            viewMessage.isHidden = false
+            labelStatusMessage.text =   """
+            Something went wrong!
+            Try again later.
+            """
+        }
+    }
+
     @IBOutlet weak var tableCharacters: UITableView!
     @IBOutlet weak var viewMessage: UIView!
-    @IBOutlet weak var labelMessage: UILabel!
+    @IBOutlet weak var labelStatusMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        state = .error
     }
 }
 
