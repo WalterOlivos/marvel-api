@@ -7,6 +7,7 @@ target 'marvel-api' do
 
   # Pods for marvel-api
 pod 'Moya', '~> 11.0'
+pod 'Kingfisher'
 
   target 'marvel-apiTests' do
     inherit! :search_paths
