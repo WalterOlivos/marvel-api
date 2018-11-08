@@ -23,6 +23,21 @@ class InfoViewController: UIViewController {
         guard let character = character else {
             fatalError("Please pass in a valid Character Object")
         }
+        
+        layoutCard(character: character)
+    }
+}
+
+extension InfoViewController {
+    private func layoutCard(character: Character) {
+        
+        characterNameLabel.text = character.name
+        
+        characterDescriptionLabel.text = character.description ?? "Not available"
+    
+        characterImageView.kf.setImage(with: character.thumbnail.url)
+        
+        
     }
 }
 

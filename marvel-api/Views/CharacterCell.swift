@@ -16,9 +16,10 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     
     public func configure(with character: Character) {
+        
         labelName.text = character.name
         
-        imageThumbnail.kf.setImage(with: character.thumbnail.url,
-                             options: [.transition(.fade(0.3))])
+        imageThumbnail.kf.setImage(with: character.thumbnail.url)
+
     }
 }

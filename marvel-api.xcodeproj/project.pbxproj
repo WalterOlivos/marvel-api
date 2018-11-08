@@ -18,6 +18,9 @@
 		A59E0824218B2E3300CF1608 /* marvel_apiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0823218B2E3300CF1608 /* marvel_apiTests.swift */; };
 		A5F3C34C2190A4C5002944EA /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3C34B2190A4C5002944EA /* CharacterCell.swift */; };
 		A5F3C3512190ABCA002944EA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3C3502190ABCA002944EA /* Character.swift */; };
+		A5F8225D21947C4200689C64 /* Marvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8225C21947C4200689C64 /* Marvel.swift */; };
+		A5F8226221947D0600689C64 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8226121947D0600689C64 /* String+MD5.swift */; };
+		A5F8226521949DC500689C64 /* CodableResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8226421949DC500689C64 /* CodableResponses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		A59E0825218B2E3300CF1608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F3C34B2190A4C5002944EA /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		A5F3C3502190ABCA002944EA /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A5F8225C21947C4200689C64 /* Marvel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel.swift; sourceTree = "<group>"; };
+		A5F8226121947D0600689C64 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		A5F8226421949DC500689C64 /* CodableResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableResponses.swift; sourceTree = "<group>"; };
 		DB17C671E6ACCA1F7282FCF0 /* Pods_marvel_apiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_apiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E536CC1BE224688FDE4F2A6A /* Pods_marvel_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +106,8 @@
 				A59E0812218B2E3200CF1608 /* Main.storyboard */,
 				A59E0817218B2E3300CF1608 /* LaunchScreen.storyboard */,
 				A59E081A218B2E3300CF1608 /* Info.plist */,
+				A5F8226021947CE200689C64 /* Helpers */,
+				A5F8225B21947C0E00689C64 /* Network */,
 				A5F3C34F2190ABBA002944EA /* Models */,
 				A59E0832218B32BE00CF1608 /* Views */,
 			);
@@ -119,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				A5F3C34B2190A4C5002944EA /* CharacterCell.swift */,
-				A59E0810218B2E3200CF1608 /* InfoViewController.swift */,
 				A56F55032190C30400B740DC /* CharacterViewController.swift */,
+				A59E0810218B2E3200CF1608 /* InfoViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +139,25 @@
 				A5F3C3502190ABCA002944EA /* Character.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A5F8225B21947C0E00689C64 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5F8225C21947C4200689C64 /* Marvel.swift */,
+				A5F8226421949DC500689C64 /* CodableResponses.swift */,
+			);
+			name = Network;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A5F8226021947CE200689C64 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A5F8226121947D0600689C64 /* String+MD5.swift */,
+			);
+			name = Helpers;
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		DC4B10D82D03994E648C3244 /* Frameworks */ = {
@@ -332,9 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F8225D21947C4200689C64 /* Marvel.swift in Sources */,
 				A5F3C34C2190A4C5002944EA /* CharacterCell.swift in Sources */,
+				A5F8226221947D0600689C64 /* String+MD5.swift in Sources */,
 				A56F55042190C30400B740DC /* CharacterViewController.swift in Sources */,
 				A59E0811218B2E3200CF1608 /* InfoViewController.swift in Sources */,
+				A5F8226521949DC500689C64 /* CodableResponses.swift in Sources */,
 				A59E080F218B2E3200CF1608 /* AppDelegate.swift in Sources */,
 				A5F3C3512190ABCA002944EA /* Character.swift in Sources */,
 			);

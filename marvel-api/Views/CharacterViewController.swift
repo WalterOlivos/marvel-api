@@ -12,6 +12,8 @@ import Moya
 
 class CharacterViewController: UIViewController {
     
+    let provider = MoyaProvider<Marvel>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    
     private var state: State = .loading {
         didSet {
             stateSwitch()
@@ -44,6 +46,25 @@ class CharacterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableCharacters.delegate = self
+        tableCharacters.dataSource = self
+        state = .loading
+        
+        provider.request(.characters) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let response):
+                do {
+                    self.state = .ready(try response.map(MarvelResponse<Character>.self).data.results)
+                } catch {
+                    self.state = .error
+                }
+            case .failure:
+                self.state = .error
+            }
+        }
     }
 }
 
