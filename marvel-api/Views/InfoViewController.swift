@@ -37,7 +37,6 @@ extension InfoViewController {
     
         characterImageView.kf.setImage(with: character.thumbnail.url)
         
-        
     }
 }
 
