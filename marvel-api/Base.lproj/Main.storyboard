@@ -129,8 +129,8 @@
                                             <constraint firstAttribute="width" secondItem="BXj-Zb-gex" secondAttribute="height" multiplier="1:1" id="gBA-YD-dpa"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv3-ns-gG0" userLabel="Lbl Desc">
-                                        <rect key="frame" x="19" y="366" width="321" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No description avaliable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv3-ns-gG0" userLabel="Lbl Desc">
+                                        <rect key="frame" x="19" y="366" width="321" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -142,13 +142,10 @@
                                     <constraint firstItem="1y0-FE-3AL" firstAttribute="leading" secondItem="2VA-Pw-Vxh" secondAttribute="leading" constant="116" id="4Jz-nB-ILE"/>
                                     <constraint firstAttribute="trailing" secondItem="BXj-Zb-gex" secondAttribute="trailing" constant="19" id="4cb-aT-aiv"/>
                                     <constraint firstItem="BXj-Zb-gex" firstAttribute="top" secondItem="1y0-FE-3AL" secondAttribute="bottom" constant="8" id="4gB-6I-ScS"/>
-                                    <constraint firstItem="zv3-ns-gG0" firstAttribute="top" secondItem="BXj-Zb-gex" secondAttribute="bottom" constant="8" id="Am7-xM-lvD"/>
                                     <constraint firstItem="zv3-ns-gG0" firstAttribute="top" secondItem="BXj-Zb-gex" secondAttribute="bottom" constant="8" id="FH6-hQ-1r6"/>
-                                    <constraint firstItem="BXj-Zb-gex" firstAttribute="top" secondItem="1y0-FE-3AL" secondAttribute="bottom" constant="8" id="FWf-y0-3QX"/>
                                     <constraint firstItem="zv3-ns-gG0" firstAttribute="leading" secondItem="2VA-Pw-Vxh" secondAttribute="leading" constant="19" id="Gts-aq-qvE"/>
                                     <constraint firstItem="1y0-FE-3AL" firstAttribute="top" secondItem="2VA-Pw-Vxh" secondAttribute="top" constant="8" id="UGY-4Y-tL3"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1y0-FE-3AL" secondAttribute="trailing" constant="20" symbolic="YES" id="YVo-N1-T1k"/>
-                                    <constraint firstAttribute="bottom" secondItem="zv3-ns-gG0" secondAttribute="bottom" constant="200" id="gUd-qn-oiW"/>
                                     <constraint firstItem="BXj-Zb-gex" firstAttribute="leading" secondItem="2VA-Pw-Vxh" secondAttribute="leading" constant="19" id="maQ-eo-enK"/>
                                 </constraints>
                             </view>
@@ -171,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="18"/>
+            <point key="canvasLocation" x="872.79999999999995" y="17.541229385307346"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OZd-ld-DrC">

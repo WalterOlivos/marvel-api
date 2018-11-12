@@ -33,7 +33,12 @@ extension InfoViewController {
         
         characterNameLabel.text = character.name
         
-        characterDescriptionLabel.text = character.description ?? "Not available"
+        characterDescriptionLabel.lineBreakMode = .byWordWrapping
+        characterDescriptionLabel.text = character.description
+        if character.description == "" {
+            characterDescriptionLabel.text = "Description not avaliable"
+        }
+        characterDescriptionLabel.sizeToFit()
     
         characterImageView.kf.setImage(with: character.thumbnail.url)
         

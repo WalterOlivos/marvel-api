@@ -41,11 +41,11 @@ class CharacterViewController: UIViewController {
             """
         }
     }
-
+    
     @IBOutlet weak var tableCharacters: UITableView!
     @IBOutlet weak var viewMessage: UIView!
     @IBOutlet weak var labelStatusMessage: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
