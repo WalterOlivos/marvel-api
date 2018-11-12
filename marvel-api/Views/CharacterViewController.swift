@@ -71,7 +71,7 @@ class CharacterViewController: UIViewController {
                 case .success(let response):
                     do {
                         self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
-                        self.currentOffset += 50
+                        self.currentOffset += 20
                     } catch {
                         self.state = .error
                     }

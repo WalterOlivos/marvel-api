@@ -47,7 +47,7 @@ extension Marvel: TargetType {
         case .characters(let offset):
             return .requestParameters(parameters: [
                 "offset": offset,
-                "limit": 50,
+                "limit": 20,
                 "apikey": Marvel.publicKey,
                 "ts": ts,
                 "hash": hash
