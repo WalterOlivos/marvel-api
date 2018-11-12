@@ -14,6 +14,8 @@ class CharacterViewController: UIViewController {
     
     let provider = MoyaProvider<Marvel>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
+    fileprivate var currentOffset: Int = 0
+    
     private var state: State = .loading {
         didSet {
             stateSwitch()
@@ -51,13 +53,20 @@ class CharacterViewController: UIViewController {
         tableCharacters.dataSource = self
         state = .loading
         
+        loadMoreCharacters()
+        
+    }
+    
+    func loadMoreCharacters() {
+        
         provider.request(.characters) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let response):
                 do {
-                    self.state = .ready(try response.map(MarvelResponse<Character>.self).data.results)
+                    self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
+                    self.currentOffset += 50
                 } catch {
                     self.state = .error
                 }
@@ -65,18 +74,31 @@ class CharacterViewController: UIViewController {
                 self.state = .error
             }
         }
+        
     }
+    
 }
 
 extension CharacterViewController {
     enum State {
         case loading
-        case ready([Character])
+        case ready(characters: [Character])
         case error
     }
 }
 
 extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let  height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        
+        if distanceFromBottom < height {
+            
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard case .ready(let items) = state else { return 0 }

@@ -22,7 +22,7 @@ extension Character {
         let `extension`: String
         
         var url: URL {
-            return URL(string: path + "." + `extension`)!
+            return URL(string: path + "/standard_medium." + `extension`)!
         }
     }
 }

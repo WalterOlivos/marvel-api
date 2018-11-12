@@ -43,9 +43,12 @@ extension Marvel: TargetType {
         let ts = "\(Date().timeIntervalSince1970)"
         let hash = (ts + Marvel.privateKey + Marvel.publicKey).md5
         
+        
+        
         switch self {
         case .characters:
             return .requestParameters(parameters: [
+                "offset": 0,
                 "limit": 50,
                 "apikey": Marvel.publicKey,
                 "ts": ts,
