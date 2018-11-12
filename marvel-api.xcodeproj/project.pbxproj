@@ -106,8 +106,8 @@
 				A59E0812218B2E3200CF1608 /* Main.storyboard */,
 				A59E0817218B2E3300CF1608 /* LaunchScreen.storyboard */,
 				A59E081A218B2E3300CF1608 /* Info.plist */,
-				A5F8226021947CE200689C64 /* Helpers */,
-				A5F8225B21947C0E00689C64 /* Network */,
+				A5FB0C582199E5960072E716 /* Network */,
+				A5FB0C572199E58C0072E716 /* Helpers */,
 				A5F3C34F2190ABBA002944EA /* Models */,
 				A59E0832218B32BE00CF1608 /* Views */,
 			);
@@ -141,23 +141,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A5F8225B21947C0E00689C64 /* Network */ = {
+		A5FB0C572199E58C0072E716 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A5F8226121947D0600689C64 /* String+MD5.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A5FB0C582199E5960072E716 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				A5F8225C21947C4200689C64 /* Marvel.swift */,
 				A5F8226421949DC500689C64 /* CodableResponses.swift */,
 			);
-			name = Network;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		A5F8226021947CE200689C64 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A5F8226121947D0600689C64 /* String+MD5.swift */,
-			);
-			name = Helpers;
-			path = "New Group1";
+			path = Network;
 			sourceTree = "<group>";
 		};
 		DC4B10D82D03994E648C3244 /* Frameworks */ = {
