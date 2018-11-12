@@ -14,7 +14,7 @@ public enum Marvel {
     static private let privateKey = "1c21f8364ed5aacab48d237f7edc162c9c4d2939"
     static private let publicKey = "038ff55d86cdc6fbe7be27d8e66c96ac"
     
-    case characters
+    case characters(offset: Int)
 }
 
 extension Marvel: TargetType {
@@ -43,12 +43,10 @@ extension Marvel: TargetType {
         let ts = "\(Date().timeIntervalSince1970)"
         let hash = (ts + Marvel.privateKey + Marvel.publicKey).md5
         
-        
-        
         switch self {
-        case .characters:
+        case .characters(let offset):
             return .requestParameters(parameters: [
-                "offset": 0,
+                "offset": offset,
                 "limit": 50,
                 "apikey": Marvel.publicKey,
                 "ts": ts,

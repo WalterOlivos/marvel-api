@@ -14,6 +14,9 @@ class CharacterViewController: UIViewController {
     
     let provider = MoyaProvider<Marvel>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
+    var characters: [Character] = []
+    
+    fileprivate var loading: Bool = false
     fileprivate var currentOffset: Int = 0
     
     private var state: State = .loading {
@@ -24,9 +27,10 @@ class CharacterViewController: UIViewController {
     
     private func stateSwitch() {
         switch state {
-        case .ready:
+        case .ready(let characters):
             viewMessage.isHidden = true
             tableCharacters.isHidden = false
+            self.characters.append(contentsOf: characters)
             tableCharacters.reloadData()
         case .loading:
             tableCharacters.isHidden = true
@@ -58,25 +62,25 @@ class CharacterViewController: UIViewController {
     }
     
     func loadMoreCharacters() {
-        
-        provider.request(.characters) { [weak self] result in
-            guard let self = self else { return }
+        if loading == false{
             
-            switch result {
-            case .success(let response):
-                do {
-                    self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
-                    self.currentOffset += 50
-                } catch {
+            provider.request(.characters(offset: currentOffset)) { [weak self] result in
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let response):
+                    do {
+                        self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
+                        self.currentOffset += 50
+                    } catch {
+                        self.state = .error
+                    }
+                case .failure:
                     self.state = .error
                 }
-            case .failure:
-                self.state = .error
             }
         }
-        
     }
-    
 }
 
 extension CharacterViewController {
@@ -89,29 +93,23 @@ extension CharacterViewController {
 
 extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let  height = scrollView.frame.size.height
-        let contentYoffset = scrollView.contentOffset.y
-        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
-        
-        if distanceFromBottom < height {
-            
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard case .ready(let items) = state else { return 0 }
-        
-        return items.count
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier, for: indexPath) as? CharacterCell ?? CharacterCell()
         
-        guard case .ready(let items) = state else { return cell }
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: 0, y: 0, width: self.tableCharacters.frame.width, height: 44)
+        self.tableCharacters.tableFooterView = spinner
+
+        cell.configure(with: characters[indexPath.row])
         
-        cell.configure(with: items[indexPath.row])
+        if (indexPath.row == self.characters.count - 1) {
+            loadMoreCharacters()
+        }
         
         return cell
     }
@@ -122,10 +120,8 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-       
-        guard case .ready(let items) = state else { return }
-        
-        let characterVC = InfoViewController.instantiate(character: items[indexPath.row])
+
+        let characterVC = InfoViewController.instantiate(character: characters[indexPath.row])
         navigationController?.pushViewController(characterVC, animated: true)
     }
 }
