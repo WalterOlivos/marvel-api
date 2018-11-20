@@ -18,6 +18,7 @@ class CharacterViewController: UIViewController {
     
     fileprivate var loading: Bool = false
     fileprivate var currentOffset: Int = 0
+    fileprivate var totalCharacters: Int = 0
     
     private var state: State = .loading {
         didSet {
@@ -62,22 +63,20 @@ class CharacterViewController: UIViewController {
     }
     
     func loadMoreCharacters() {
-        if loading == false{
+        
+        provider.request(.characters(offset: currentOffset)) {
+            [weak self] result in guard let self = self else { return }
             
-            provider.request(.characters(offset: currentOffset)) { [weak self] result in
-                guard let self = self else { return }
-                
-                switch result {
-                case .success(let response):
-                    do {
-                        self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
+            switch result {
+            case .success(let response):
+                do {
+                    self.state = .ready(characters: try response.map(MarvelResponse<Character>.self).data.results)
                         self.currentOffset += 20
                     } catch {
                         self.state = .error
                     }
-                case .failure:
+            case .failure:
                     self.state = .error
-                }
             }
         }
     }
@@ -106,6 +105,7 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableCharacters.tableFooterView = spinner
 
         cell.configure(with: characters[indexPath.row])
+        
         
         if (indexPath.row == self.characters.count - 1) {
             loadMoreCharacters()

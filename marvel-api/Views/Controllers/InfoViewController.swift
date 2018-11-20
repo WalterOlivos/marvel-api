@@ -16,8 +16,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
     
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         guard let character = character else {
@@ -26,6 +26,17 @@ class InfoViewController: UIViewController {
         
         layoutCard(character: character)
     }
+    
+    @IBAction func sendId(_ sender: Any) {
+        self.performSegue(withIdentifier: "Test", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let comicsViewController = segue.destination as? ComicsViewController {
+            comicsViewController.id = (character?.id)!
+        }
+    }
+    
 }
 
 extension InfoViewController {
@@ -56,3 +67,5 @@ extension InfoViewController {
         return vc
     }
 }
+
+

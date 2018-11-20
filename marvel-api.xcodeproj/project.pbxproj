@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		40921F214C4477F14E975595 /* Pods_marvel_apiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB17C671E6ACCA1F7282FCF0 /* Pods_marvel_apiTests.framework */; };
 		6DB1F6A5155DEF5C06C17BB0 /* Pods_marvel_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E536CC1BE224688FDE4F2A6A /* Pods_marvel_api.framework */; };
+		A530B4AA219B521C009ADD1E /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530B4A9219B521C009ADD1E /* ComicCell.swift */; };
+		A530B4AE219B5298009ADD1E /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530B4AD219B5298009ADD1E /* Comic.swift */; };
+		A530B4B0219B5BF2009ADD1E /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530B4AF219B5BF2009ADD1E /* ComicsViewController.swift */; };
 		A56F55042190C30400B740DC /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F55032190C30400B740DC /* CharacterViewController.swift */; };
 		A59E080F218B2E3200CF1608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E080E218B2E3200CF1608 /* AppDelegate.swift */; };
 		A59E0811218B2E3200CF1608 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0810218B2E3200CF1608 /* InfoViewController.swift */; };
@@ -37,6 +40,9 @@
 		45A5DAC97269FD2ED6D7AD2E /* Pods-marvel-apiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-apiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-apiTests/Pods-marvel-apiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		638458D3BDE4D264BD483A2C /* Pods-marvel-apiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-apiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-apiTests/Pods-marvel-apiTests.release.xcconfig"; sourceTree = "<group>"; };
 		668BBBFF145CF77017B30F8D /* Pods-marvel-api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-api.release.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-api/Pods-marvel-api.release.xcconfig"; sourceTree = "<group>"; };
+		A530B4A9219B521C009ADD1E /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
+		A530B4AD219B5298009ADD1E /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		A530B4AF219B5BF2009ADD1E /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		A5568E22BF2EB3639326E07D /* Pods-marvel-api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-api.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marvel-api/Pods-marvel-api.debug.xcconfig"; sourceTree = "<group>"; };
 		A56F55032190C30400B740DC /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		A59E080B218B2E3200CF1608 /* marvel-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "marvel-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A530B4A8219B520D009ADD1E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5F3C34B2190A4C5002944EA /* CharacterCell.swift */,
+				A530B4A9219B521C009ADD1E /* ComicCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A530B4B1219B5C01009ADD1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A56F55032190C30400B740DC /* CharacterViewController.swift */,
+				A530B4AF219B5BF2009ADD1E /* ComicsViewController.swift */,
+				A59E0810218B2E3200CF1608 /* InfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A59E0802218B2E3200CF1608 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +151,8 @@
 		A59E0832218B32BE00CF1608 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A5F3C34B2190A4C5002944EA /* CharacterCell.swift */,
-				A56F55032190C30400B740DC /* CharacterViewController.swift */,
-				A59E0810218B2E3200CF1608 /* InfoViewController.swift */,
+				A530B4B1219B5C01009ADD1E /* Controllers */,
+				A530B4A8219B520D009ADD1E /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A5F3C3502190ABCA002944EA /* Character.swift */,
+				A530B4AD219B5298009ADD1E /* Comic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,9 +385,12 @@
 				A5F8225D21947C4200689C64 /* Marvel.swift in Sources */,
 				A5F3C34C2190A4C5002944EA /* CharacterCell.swift in Sources */,
 				A5F8226221947D0600689C64 /* String+MD5.swift in Sources */,
+				A530B4B0219B5BF2009ADD1E /* ComicsViewController.swift in Sources */,
+				A530B4AA219B521C009ADD1E /* ComicCell.swift in Sources */,
 				A56F55042190C30400B740DC /* CharacterViewController.swift in Sources */,
 				A59E0811218B2E3200CF1608 /* InfoViewController.swift in Sources */,
 				A5F8226521949DC500689C64 /* CodableResponses.swift in Sources */,
+				A530B4AE219B5298009ADD1E /* Comic.swift in Sources */,
 				A59E080F218B2E3200CF1608 /* AppDelegate.swift in Sources */,
 				A5F3C3512190ABCA002944EA /* Character.swift in Sources */,
 			);
@@ -527,7 +555,9 @@
 			baseConfigurationReference = A5568E22BF2EB3639326E07D /* Pods-marvel-api.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NDFH67L52;
 				INFOPLIST_FILE = "marvel-api/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,6 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "wolivos.marvel-api";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -545,7 +576,9 @@
 			baseConfigurationReference = 668BBBFF145CF77017B30F8D /* Pods-marvel-api.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NDFH67L52;
 				INFOPLIST_FILE = "marvel-api/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,6 +586,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "wolivos.marvel-api";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

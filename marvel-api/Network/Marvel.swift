@@ -15,6 +15,8 @@ public enum Marvel {
     static private let publicKey = "038ff55d86cdc6fbe7be27d8e66c96ac"
     
     case characters(offset: Int)
+    case comics(offset: Int, id: Int)
+    
 }
 
 extension Marvel: TargetType {
@@ -25,12 +27,14 @@ extension Marvel: TargetType {
     public var path: String {
         switch self {
         case .characters: return "/characters"
+        case .comics(_, let id): return "/characters/\(id)/comics"
         }
     }
     
     public var method: Moya.Method {
         switch self {
         case .characters: return .get
+        case .comics: return .get
         }
     }
     
@@ -44,14 +48,26 @@ extension Marvel: TargetType {
         let hash = (ts + Marvel.privateKey + Marvel.publicKey).md5
         
         switch self {
-        case .characters(let offset):
+            
+        case .characters(let charOffset):
             return .requestParameters(parameters: [
-                "offset": offset,
+                "offset": charOffset,
                 "limit": 20,
                 "apikey": Marvel.publicKey,
                 "ts": ts,
                 "hash": hash
             ], encoding: URLEncoding.queryString)
+            
+        case .comics(let comicOffset, let id):
+            return .requestParameters(parameters: [
+                "characterId": id,
+                "offset": comicOffset,
+                "limit": 20,
+                "apikey": Marvel.publicKey,
+                "ts": ts,
+                "hash": hash
+                ], encoding: URLEncoding.queryString)
+            
         }
     }
     
