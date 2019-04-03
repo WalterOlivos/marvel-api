@@ -141,7 +141,6 @@
                                         <rect key="frame" x="87" y="394.5" width="185" height="30"/>
                                         <state key="normal" title="Comics with this Character"/>
                                         <connections>
-                                            <action selector="sendId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6D-kh-8K7"/>
                                             <segue destination="wgX-1t-8bG" kind="show" identifier="Test" id="xIG-SG-IXK"/>
                                         </connections>
                                     </button>

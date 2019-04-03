@@ -62,11 +62,7 @@ class ComicsViewController: UIViewController {
         
     }
     
-
-    
     func loadMoreComics() {
-        
-        
         
         provider.request(.comics(offset: currentOffset, id: id)) {
             [weak self] result in guard let self = self else { return }
