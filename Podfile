@@ -6,7 +6,7 @@ target 'marvel-api' do
   use_frameworks!
 
   # Pods for marvel-api
-pod 'Moya', '~> 11.0'
+pod 'Moya'
 pod 'Kingfisher'
 
   target 'marvel-apiTests' do
