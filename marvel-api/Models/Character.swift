@@ -13,7 +13,6 @@ struct Character: Codable {
     let name: String
     let description: String?
     let thumbnail: Thumbnail
-
 }
 
 extension Character {
@@ -22,7 +21,8 @@ extension Character {
         let `extension`: String
         
         var url: URL {
-            return URL(string: path + "." + `extension`)!
+            return URL(string: path + "/standard_fantastic." + `extension`)!
         }
     }
 }
+
